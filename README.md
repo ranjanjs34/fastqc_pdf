@@ -3,6 +3,8 @@ Run FASTQC tool on large number of samples parallelly.
 
 install FASTQC or keep the the downloaded fastqc on the path.
 
+install weasyprint using pip3.(python3)
+
 install GNU Parallel
 
 Run fastqc_pdf as ./fastqc_pdf
