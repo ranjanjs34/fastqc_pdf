@@ -1,0 +1,39 @@
+#! /usr/bin/bash
+echo "Provide Output Directory Name"
+read name
+echo "Enter number of thread:"
+read thread
+echo "Developer:Ranjan Jyoti Sarma"
+echo "Designation: Ph.D. Research Fellow"
+echo "Affiliation: Department of Biotechnology, Mizoram University"
+echo "Input directory to FASTQ files:"
+read input
+mkdir ./fastqc_pdf
+for dir in $input/*/
+do
+	dir=${dir%/}
+	
+	mkdir -p $HOME/Desktop/$name/${input##*/}_out/${dir##*/}
+	
+	echo "fastqc $input/${dir##*/}/*.fastq.gz -o $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/">>./fastqc_pdf/fastqc
+	
+	echo "weasyprint $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/*R1_fastqc.html $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/${dir##*/}_R1.pdf">>./fastqc_pdf/fastqc_html2pdf_read1
+	
+	echo "weasyprint $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/*R2_fastqc.html $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/${dir##*/}_R2.pdf">>./fastqc_pdf/fastqc_html2pdf_read2
+	
+	echo "rm $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/*.html">>./fastqc_pdf/rm_html
+	
+	echo "rm $HOME/Desktop/$name/${input##*/}_out/${dir##*/}/*.zip">>./fastqc_pdf/rm_zip
+done
+
+echo "Analysis Started at: "$(date)
+cat ./fastqc_pdf/fastqc | parallel -j $thread {}
+cat ./fastqc_pdf/fastqc_html2pdf_read1 | parallel -j $thread {}
+cat ./fastqc_pdf/fastqc_html2pdf_read2 | parallel -j $thread {} 
+cat ./fastqc_pdf/rm_html | parallel -j $thread {}
+cat ./fastqc_pdf/rm_zip | parallel -j $thread {}
+echo "Clearing temporary files and folders"
+rm -r ./fastqc_pdf
+echo "Done!"
+echo "Analysis Finished at: "$(date)
+exit
