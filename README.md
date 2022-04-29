@@ -11,6 +11,9 @@ Run fastqc_pdf as ./fastqc_pdf
 
 # Advantage of fastqc_pdf tool:
 
-1. It can  run on multiple samples at a time (Parallel Processing) to save time. 
+1. Instead of single prcess at a time, multithreading is added to run on larger samples. 
 
 2. It can generate PDF reports instead of HTML reports.
+
+
+## Citation: Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
