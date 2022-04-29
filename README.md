@@ -4,11 +4,11 @@ Run FASTQC tool on large number of samples (fastq) parallelly.
 
 # Advantage of fastqc_pdf tool:
 1. Multithreading is added to run on larger samples (You can you use the maximum CPU cores in QC) in order to save time.  
-2. It can generate PDF reports instead of HTML reports.
+2. It generates PDF reports after each QC step instead of HTML reports.
 
 
 # Dependencies to install:
-Download FastQC, add executable permision to fastqc and add it to your path in .bashrc file.
+Download FastQC, add executable permision to fastqc and add the path in .bashrc file.
 
 pip3 install weasyprint
 
