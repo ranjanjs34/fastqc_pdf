@@ -1,5 +1,5 @@
 # fastqc_pdf Tool
-Run FASTQC tool on large number of samples parallelly.
+Run FASTQC tool on large number of samples (fastq) parallelly.
 
 
 # Advantage of fastqc_pdf tool:
