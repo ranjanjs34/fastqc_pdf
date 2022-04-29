@@ -15,9 +15,13 @@ pip3 install weasyprint
 sudo apt install parallel
 
 # Download and run fastqc_pdf
+
 git clone https://github.com/ranjanjs34/fastqc_pdf.git
+
 cd fastqc_pdf
+
 chmod +x ./fastqc_pdf
+
 Run as: ./fastqc_pdf
 
 ## Citation: Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
