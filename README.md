@@ -3,7 +3,7 @@ Run FASTQC tool on large number of samples (fastq) parallelly.
 
 
 # Advantage of fastqc_pdf tool:
-1. Instead of single prcess at a time, multithreading is added to run on larger samples. 
+1. Multithreading is added to run on larger samples (You can you use the maximum CPU cores in QC) in order to save time.  
 2. It can generate PDF reports instead of HTML reports.
 
 
