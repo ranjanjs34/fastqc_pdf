@@ -22,6 +22,6 @@ cd fastqc_pdf
 
 chmod +x ./fastqc_pdf
 
-Run as: ./fastqc_pdf
+Execute the binary as: ./fastqc_pdf
 
 ## Citation: Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
